@@ -43,40 +43,188 @@ $1 --help
 ````
 
 #### Ejercicio 3:
-`hola`
+````
+#! /bin/bash
+
+# Comprueba si el usuario actual del sistema es blas, si es así visualiza su nombre 5 veces, sino te despides de él amigablemente.
+
+clear
+usuario=`whoami`
+if [ $usuario == 'blas' ]
+then
+	echo $usuario
+	echo $usuario
+	echo $usuario
+	echo $usuario
+	echo $usuario
+else
+	echo "Nos vemos"
+fi
+````
 
 #### Ejercicio 4:
-`hola`
+````
+
+````
 
 #### Ejercicio 5:
-`hola`
+````
+#! /bin/bash
+
+# Suma, resta o multiplica según le indiquemos en el menú.
+
+clear
+while [ true ]
+do
+	read -p "Introduce (1/Suma) (2/Resta) (3/Multiplicación) (4/Salir) " opcion
+	case $opcion in
+		1)
+			read -p "Primer número " n1
+			read -p "Segundo número " n2
+			su=`expr $n1 + $n2`
+			echo $n1" + " $n2 " = "$su
+		;;
+		2)
+			read -p "Primer número " n1
+			read -p "Segundo número " n2
+			re=`expr $n1 - $n2`
+			echo $n1" - " $n2 " = "$re
+		;;
+		3)
+			read -p "Primer número " n1
+			read -p "Segundo número " n2
+			mu=`expr $n1 \* $n2`
+			echo $n1" * " $n2 " = "$mu
+		;;
+		*)
+			exit 0
+		;;
+	esac
+done
+````
 
 #### Ejercicio 6:
-`hola`
+````
+#! /bin/bash
+
+# Pide la edad y nos dice si es mayor de edad o menor.
+
+clear
+read -p "Introduce tu edad: " edad
+if [ $edad -lt 18 ]
+then
+	echo "Eres menor de edad "
+else
+	echo "Eres mayor de edad"
+fi
+````
 
 #### Ejercicio 7:
-`hola`
+````
+
+````
 
 #### Ejercicio 8:
-`hola`
+````
+#/!bin/bash
+
+# Nos dice al pulsar una tecla si es una letra, numero o caracter especial.
+
+
+read -p "Introduce el carácter " caracter
+case $caracter in
+	[a-z,A-Z])
+		echo "Ha introducido una letra"
+	;;
+	[0-9])
+		echo "Ha introducido un número"
+	;;
+	*)
+		echo "Ha introducido un caracter especial"
+	;;
+esac
+````
 
 #### Ejercicio 9:
-`hola`
+````
+
+````
 
 #### Ejercicio 10:
-`hola`
+````
+
+````
 
 #### Ejercicio 11:
-`hola`
+````
+#/!bin/bash
+
+# Nos pide introducir la ruta de un directorio por teclado y nos dice cuantos archivos y cuantos directorios
+# hay dentro de ese directorio.
+
+clear
+read -p "Introduzca la ruta de un directorio :" directorio
+until [ -d $directorio ]
+do
+	read -p "Introduzca la ruta de un directorio :" directorio
+done
+contador=0
+contadorFicheros=0
+	for indice in `ls $directorio`
+	do
+		if [ -d $indice ]
+		then
+			contador=`expr $contador + 1`
+			elif [ -f $indice ]
+			then
+				contadorFicheros=`expr $contadorFicheros + 1`
+			fi
+done
+echo "Ha introducido $contador directorios y $contadorFicheros ficheros."
+````
 
 #### Ejercicio 12:
-`hola`
+````
+#/!bin/bash
+
+# Introduce un número por parámetro y muestra su tabla de multiplicar
+
+clear
+echo "La tabla de multiplicar de $1 es: "
+for (( indice=0; indice<11; indice++ ))
+do
+   resultado=`expr $1 \* $indice`
+   echo "$1 x $indice = $resultado"
+done
+````
 
 #### Ejercicio 13:
-`hola`
+````
+#/!bin/bash
+
+# Limpia todas las reglas, y da permiso a todas las conexiones.
+
+clear
+iptables -F
+iptables -A INPUT -j ACCEPT
+iptables -A OUTPUT -j ACCEPT
+iptables -A FORWARD -j ACCEPT
+````
 
 #### Ejercicio 14:
-`hola`
+````
+#/!bin/bash
+
+# Limpia todas las reglas, y prohíbe cualquier conexión.
+
+clear
+iptables -F
+iptables -A INPUT -j DROP
+iptables -A OUTPUT -j DROP
+iptables -A FORWARD -j DROP
+````
 
 #### Ejercicio 15:
-`hola`
+````
+
+````
