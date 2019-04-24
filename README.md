@@ -32,11 +32,15 @@ fi
 exit -1
 ````
 
-#### Ejercicio 1:
-`hola`
-
 #### Ejercicio 2:
-`hola`
+````
+#! /bin/bash
+
+# Muestra la información de un comando al ejecutar dicho script y pasar como parámetro el comando.
+
+clear
+$1 --help
+````
 
 #### Ejercicio 3:
 `hola`
