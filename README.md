@@ -64,7 +64,18 @@ fi
 
 #### Ejercicio 4:
 ````
+#/!bin/bash
 
+# Muestra si la palabra clave de un archivo es el parámetro pasado o no.
+
+clear
+clave=`cat /home/usuario/Documents/fichero.sh`
+if [ $clave == $1 ]
+then
+	echo "Si"
+else
+	echo "No"
+fi
 ````
 
 #### Ejercicio 5:
