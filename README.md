@@ -1,8 +1,10 @@
 # Ejercicios-scripts-Linux
 #### Ejercicio 1:
-```
+````
 #! /bin/bash
+
 # Elimina un archivo o directorio pasado como parámetro, y le pregunte si está seguro de llevar a cabo la acción.
+
 clear
 if [ -e $1 ]
 then
@@ -28,7 +30,7 @@ else
 	echo "No existe el fichero o directorio introducido."
 fi
 exit -1
-```
+````
 
 #### Ejercicio 1:
 `hola`
