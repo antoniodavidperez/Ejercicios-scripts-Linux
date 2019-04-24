@@ -132,7 +132,34 @@ fi
 
 #### Ejercicio 7:
 ````
+#/!bin/bash
 
+# Recibe un nombre de fichero, verifica que existe y que es un fichero de lectura-escritura,
+# lo convierte en ejecutable para el usuario y el grupo y muestra el estado final de los permisos.
+
+clear
+if [ -f $1 ]
+then
+    	if [ -r $1 ]
+	then
+		echo "Tiene permisos de lectura"
+		if [ -w $1 ]
+		then
+			echo "Tiene permisos de escritura "
+			chmod ug+x $1
+			ls -l $1
+		else
+			echo "El fichero no tiene permisos de lectura-escritura"
+        fi
+
+    else
+    echo "El fichero no tiene permisos de lectura-escritura"
+
+    fi
+
+else
+echo "El fichero no existe"
+fi
 ````
 
 #### Ejercicio 8:
