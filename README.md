@@ -185,7 +185,25 @@ esac
 
 #### Ejercicio 9:
 ````
+#/!bin/bash
 
+# Recibe varios parametros y nos dice cuantos de esos parametros son de directorios y cuantos son archivos.
+
+clear
+contador=0
+contadorFicheros=0
+for indice in $@
+do
+	if [ -d $indice ]
+	then
+		contador=`expr $contador + 1`
+	elif [ -f $indice ]
+	then
+		contadorFicheros=`expr $contadorFicheros + 1`
+	fi
+done
+echo "Número de directorios: $contador"
+echo "Número de ficheros: $contadorFicheros"
 ````
 
 #### Ejercicio 10:
