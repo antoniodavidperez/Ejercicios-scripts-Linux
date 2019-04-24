@@ -208,15 +208,15 @@ do
 done
 contador=0
 contadorFicheros=0
-	for indice in `ls $directorio`
-	do
-		if [ -d $indice ]
-		then
-			contador=`expr $contador + 1`
-			elif [ -f $indice ]
-			then
-				contadorFicheros=`expr $contadorFicheros + 1`
-			fi
+for indice in `ls $directorio`
+do
+	if [ -d $indice ]
+	then
+		contador=`expr $contador + 1`
+	elif [ -f $indice ]
+	then
+		contadorFicheros=`expr $contadorFicheros + 1`
+	fi
 done
 echo "Ha introducido $contador directorios y $contadorFicheros ficheros."
 ````
