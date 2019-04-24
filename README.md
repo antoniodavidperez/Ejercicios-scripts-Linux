@@ -316,5 +316,37 @@ iptables -A FORWARD -j DROP
 
 #### Ejercicio 15:
 ````
+#/!bin/bash
 
+# Se introducen tres parámetros: red(ip), entrada-salida, aceptar-denegar. Dá estos permisos a iptables.
+
+clear
+if [ $2 == "entrada" ]
+then
+	if [ $3 == "aceptar" ]
+	then
+		iptables -A INPUT -s $1 -j ACCEPT
+	fi
+fi
+if [ $2 == "entrada" ]
+then
+	if [ $3 == "denegar" ]
+	then
+		iptables -A INPUT -s $1 -j DROP
+	fi
+fi
+if [ $2 == "salida" ]
+then
+	if [ $3 == "aceptar" ]
+	then
+		iptables -A INPUT -d $1 -j ACCEPT
+	fi
+fi
+if [ $2 == "salida" ]
+then
+	if [ $3 == "denegar" ]
+	then
+		iptables -A INPUT -d $1 -j DROP
+	fi
+fi
 ````
