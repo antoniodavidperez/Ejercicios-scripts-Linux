@@ -208,7 +208,41 @@ echo "Número de ficheros: $contadorFicheros"
 
 #### Ejercicio 10:
 ````
+#/!bin/bash
 
+clear
+read -p "Introduce una opción: 1) Cocacola 2)Fanta 3)Salir: " opcion
+case $opcion in
+	1)
+		read -p "Introduce 2 euro: " dinero
+		if [ $dinero -lt 2 ]
+		then
+			echo "Falta"
+		elif [ $dinero -eq 2 ]
+		then
+			echo "Gracias buen probecho"
+		elif [ $dinero -gt 2 ]
+		then
+			echo "El cambio"
+		fi
+	;;
+	2)
+		read -p "Introduce 4 euro: " dinero
+		if [ $dinero -lt 4 ]
+		then
+			echo "Falta"
+		elif [ $dinero -eq 4 ]
+		then
+			echo "Gracias buen probecho"
+		elif [ $dinero -gt 4 ]
+		then
+			echo "El cambio"
+		fi
+	;;
+	*)
+		exit 0
+	;;
+esac
 ````
 
 #### Ejercicio 11:
